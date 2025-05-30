@@ -28,7 +28,7 @@ documents = [
 ]
 
 # Vector store with embeddings
-embedding_function = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+embedding_function = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2", model_kwargs={"device": "cpu"})
 vectorstore = FAISS.from_documents(documents, embedding_function)
 
 
